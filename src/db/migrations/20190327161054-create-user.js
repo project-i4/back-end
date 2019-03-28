@@ -18,6 +18,13 @@ module.exports = {
         field: "hashed_password",
         allowNull: false
       },
+      name: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      address: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
