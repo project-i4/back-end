@@ -6,9 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     sub_category: DataTypes.STRING,
     experience: DataTypes.TEXT,
     address: DataTypes.STRING
-  }, {});
+  }, { tableName: "business" });
   Business.associate = function(models) {
-    // associations can be defined here
+    Business.belongsTo(models.User, {
+      foreignKey: "user_Id",
+      onDelete: 'CASCADE'
+    });
   };
   return Business;
 };
