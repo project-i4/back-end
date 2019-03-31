@@ -27,7 +27,9 @@ router.post("/sign-up", (req, res, next) => {
       } else {
         return User.create({
           email: credentials.email,
-          hashedPassword: credentials.password
+          hashedPassword: credentials.password,
+          name: credentials.name,
+          address: credentials.address,
         });
       }
     })
