@@ -13,7 +13,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         field: "hashed_password",
         allowNull: false
-      }
+      },
+      
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+  
+      },
+      
+      address: {
+        type: DataTypes.STRING,
+    
+      },
     },
     {
       tableName: "users",
