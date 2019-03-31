@@ -14,17 +14,15 @@ module.exports = (sequelize, DataTypes) => {
         field: "hashed_password",
         allowNull: false
       },
-      
+
       name: {
         type: DataTypes.STRING,
-        allowNull: false,
-  
+        allowNull: false
       },
-      
+
       address: {
-        type: DataTypes.STRING,
-    
-      },
+        type: DataTypes.STRING
+      }
     },
     {
       tableName: "users",
@@ -53,7 +51,12 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Business, {
       foreignKey: "user_Id",
       as: "businesses"
-    })
+    });
+
+    User.hasMany(models.Request, {
+      foreignKey: "user_Id",
+      as: "requests"
+    });
   };
   return User;
 };
