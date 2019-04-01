@@ -23,7 +23,7 @@ module.exports = {
         "address": "Riyadh",
         "created_at": new Date(),
         "updated_at": new Date(),
-        "user_id":"1"
+        "user_id":"16"
 
       },
       {
@@ -34,7 +34,7 @@ module.exports = {
         "address": "Tokyo",
         "created_at": new Date(),
         "updated_at": new Date(),
-        "user_id": "2"
+        "user_id": "17"
       },
       {
         "name": "Abdullah ",
@@ -44,9 +44,41 @@ module.exports = {
         "address": "Amsterdam",
         "created_at": new Date(),
         "updated_at": new Date(),
-        "user_id": "3"
+        "user_id": "18"
 
       },
+      {
+        "name": "Rami ",
+        "category": "Company",
+        "sub_category": "consultant",
+        "experience": "five yearse good worker",
+        "address": "Jeddah",
+        "created_at": new Date(),
+        "updated_at": new Date(),
+        "user_id": "19"
+      },
+      {
+        "name": "David ",
+        "category": "Company",
+        "sub_category": "Contractor",
+        "experience": "five yearse good worker",
+        "address": "London",
+        "created_at": new Date(),
+        "updated_at": new Date(),
+        "user_id": "20"
+      },
+      {
+        "name": "Hamad ",
+        "category": "individual",
+        "sub_category": "CivilEngineer",
+        "experience": "five yearse good worker",
+        "address": "Qassim",
+        "created_at": new Date(),
+        "updated_at": new Date(),
+        "user_id": "21" 
+      }
+    
+
 
     ], {});
   },
