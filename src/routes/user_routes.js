@@ -29,7 +29,7 @@ router.post("/sign-up", (req, res, next) => {
           email: credentials.email,
           hashedPassword: credentials.password,
           name: credentials.name,
-          address: credentials.address,
+          address2: credentials.address2
         });
       }
     })
