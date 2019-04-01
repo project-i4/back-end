@@ -40,6 +40,30 @@ module.exports = {
                 "updated_at": new Date()
 
             },
+            {
+                "name": "Rami ",
+                "hashed_password": "123456",
+                "email": "Rami@gmail.com",
+                "address": "Jeddah",
+                "created_at": new Date(),
+                "updated_at": new Date()  
+            },
+            {
+                "name": "David ",
+                "hashed_password": "123456",
+                "email": "David@gmail.com",
+                "address": "London",
+                "created_at": new Date(),
+                "updated_at": new Date()
+            },
+            {
+                "name": "Hamad ",
+                "hashed_password": "123456",
+                "email": "Hamad@gmail.com",
+                "address": "Qassim",
+                "created_at": new Date(),
+                "updated_at": new Date()
+            }
 
         ], {});
     },
