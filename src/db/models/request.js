@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Request.associate = function(models) {
     // associations can be defined here
     Request.belongsTo(models.User, {
-      foreignKey: "user_Id",
+      foreignKey: "user_id",
       onDelete: "CASCADE"
     });
 
