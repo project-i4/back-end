@@ -10,6 +10,7 @@ import models from "./../db/models";
 const tokenAuth = passport.authenticate("jwt", { session: false });
 const localAuth = passport.authenticate("local", { session: false });
 const User = models.User;
+const Business = models.Business;
 
 // instantiate a router (mini app that only handles routes)
 const router = express.Router();
@@ -111,4 +112,34 @@ router.patch("/change-password", tokenAuth, (req, res, next) => {
     .catch(next);
 });
 
+router.get("/individual/:sub_category", (req, res) => {
+  User.findAll({
+    include: [
+      {
+        model: Business,
+        as: "businesses",
+        where: { sub_category: req.params.sub_category }
+      }
+    ]
+  })
+    .then(users => res.json(users))
+    .then(data => console.log(data))
+    .catch(e => console.log(e));
+});
+
+router.post("/individual/create_business", (req, res) => {
+  // assigns payload to req.user
+
+  // console.log(req.body);
+
+  Business.create(req.body)
+    .then(user => res.json(user))
+    .catch(e => console.log("This is create error ", e));
+});
+
+router.get("/profile/14", (req, res) => {
+  User.findByPk("14")
+    .then(user => res.json(user))
+    .catch(e => console.log(e));
+});
 export default router;
