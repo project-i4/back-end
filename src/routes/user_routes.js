@@ -127,4 +127,19 @@ router.get("/individual/:sub_category", (req, res) => {
     .catch(e => console.log(e));
 });
 
+router.post("/individual/create_business", (req, res) => {
+  // assigns payload to req.user
+
+  // console.log(req.body);
+
+  Business.create(req.body)
+    .then(user => res.json(user))
+    .catch(e => console.log("This is create error ", e));
+});
+
+router.get("/profile/14", (req, res) => {
+  User.findByPk("14")
+    .then(user => res.json(user))
+    .catch(e => console.log(e));
+});
 export default router;
