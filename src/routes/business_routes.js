@@ -14,6 +14,16 @@ const User = models.User;
 
 // instantiate a router (mini app that only handles routes)
 const router = express.Router();
+router.get('/business', (req, res) =>{
+  console.log('here')
+ Business.findAll()
+ .then(business => {
+   res.status(200).json({
+     business: business
+   })
+ })
+   .catch(e => console.log(e));
+} )
 
 router.get("/user/:id/business/", (req, res) => {
   User.findByPk(req.params.id, {
