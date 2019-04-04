@@ -23,4 +23,16 @@ router.get("/user/:id/business/", (req, res) => {
     .catch(e => console.log(e));
 });
 
+router.delete("/My_businesses/delete/:id", (req, res) => {
+  let busId = req.params.id;
+  Business.findByPk(busId).then(business => business.destroy());
+});
+
+router.patch("/My_businesses/edit/:id", (req, res) => {
+  let busId = req.params.id;
+  let chnges = req.body;
+  console.log("chabes kkkkkkkk", chnges);
+
+  Business.findByPk(busId).then(business => business.update(chnges));
+});
 export default router;

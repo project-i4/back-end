@@ -137,9 +137,46 @@ router.post("/individual/create_business", (req, res) => {
     .catch(e => console.log("This is create error ", e));
 });
 
-router.get("/profile/14", (req, res) => {
-  User.findByPk("14")
+router.get("/profile/:id", (req, res) => {
+  let userId = req.params.id;
+  User.findByPk(userId, {
+    include: [
+      {
+        model: Business,
+        as: "businesses"
+      }
+    ]
+  })
     .then(user => res.json(user))
     .catch(e => console.log(e));
 });
+
+router.get("/My_businesses/:id", (req, res) => {
+  let userId = req.params.id;
+  User.findByPk(userId, {
+    include: [
+      {
+        model: Business,
+        as: "businesses"
+      }
+    ]
+  })
+    .then(user => res.json(user))
+    .catch(e => console.log(e));
+});
+
+// Business.findByPk(busId)
+//   .then(business => {
+//     business.destory().then(() => {
+//       res
+//         .status(200)
+//         .json({
+//           msh: `Business with id ${busId} is deleted`,
+//           success: true
+//         })
+//         .catch(e => console.log(e));
+//     });
+//   })
+//   .catch(e => console.log(e));
+// });
 export default router;
