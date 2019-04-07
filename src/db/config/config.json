@@ -17,10 +17,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "client": "postgresql",
+    "connection": {
+      "database": "postgres://jqltyolssrppcu:4b7215f971249be4add8e0efaadc2675ee01b21cd1e6482463c477e4dd33f636@ec2-54-83-61-142.compute-1.amazonaws.com:5432/d7ipeg6bkn4fii",
+      "user": "jqltyolssrppcu",
+      "password": "4b7215f971249be4add8e0efaadc2675ee01b21cd1e6482463c477e4dd33f636"
+    }
   }
 }
